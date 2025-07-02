@@ -1,0 +1,24 @@
+{
+    "name": "QGIS Dev Container",
+    "image": "qgis/qgis:release-3_16",
+    "settings": {
+        // Add any VS Code settings you want to customize here
+    },
+    "extensions": [
+        "ms-python.debugpy"
+        // Add any additional VS Code extensions you want to include here
+    ],
+    // this postCreate command ensures debugpy is installed before launching qgis
+    // if a custom built docker image is used, debugpy may be installed in the docker build process
+    "postCreateCommand": "nohup echo $(pip install debugpy && qgis) > /dev/null 2>&1",
+    "mounts": [
+        "type=bind,source=/tmp/.X11-unix,target=/tmp/.X11-unix",
+        "type=bind,source=.,target=/app"
+    ],
+    "containerEnv": {
+        "DISPLAY": "unix:0",
+        "PYTHONPATH": "/app/:/usr/share/qgis/python/plugins/",
+        "QGIS_PLUGINPATH": "/app"
+    }
+    "remoteUser": "root"
+}

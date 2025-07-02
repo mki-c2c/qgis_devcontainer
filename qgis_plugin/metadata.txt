@@ -1,0 +1,13 @@
+[general]
+name=My QGIS Plugin
+description=A basic QGIS plugin example.
+version=0.1
+author=Your Name
+email=your.email@example.com
+qgisMinimumVersion=3.0
+category=Plugins
+icon=icon.png
+homepage=https://example.com/my-qgis-plugin
+repository=https://github.com/yourusername/my-qgis-plugin
+tracker=https://github.com/yourusername/my-qgis-plugin/issues
+longDescription=This is a basic QGIS plugin that serves as an example for creating QGIS plugins.
